@@ -13,7 +13,7 @@ sudo systemctl restart docker
 sudo docker ps
 
 sudo docker run -dit --name myos2 -p 8085:80 centos:7
-sudo docker exec -i myos2  yum install nginx  -y
+sudo docker exec -i myos2  yum install httpd  -y
 sudo docker exec -i myos2  yum install net-tools  -y
-sudo docker cp  /root/jenkins/index.html  myos2:/usr/share/nginx/html/
-sudo docker exec -i myos2  /usr/sbin/nginx
+sudo docker cp  /root/jenkins/index.html  myos2:/var/www/html/
+sudo docker exec -i myos2  /usr/sbin/httpd
